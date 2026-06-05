@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Traffic WEB APPLICATION</title> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+
+<body>
+
+<h1>🚦 Smart Traffic Control</h1>
+
+<div class="container">
+
+  <div class="road">
+    <h2>Road 1</h2>
+    <p>Density: <span id="d1">0</span></p>
+    <div class="signal red" id="s1"></div>
+  </div>
+
+  <div class="road">
+    <h2>Road 2</h2>
+    <p>Density: <span id="d2">0</span></p>
+    <div class="signal red" id="s2"></div>
+  </div>
+
+  <div class="road">
+    <h2>Road 3</h2>
+    <p>Density: <span id="d3">0</span></p>
+    <div class="signal red" id="s3"></div>
+  </div>
+
+  <div class="road">
+    <h2>Road 4</h2>
+    <p>Density: <span id="d4">0</span></p>
+    <div class="signal red" id="s4"></div>
+  </div>
+
+</div>
+
+<h2>🚑 Emergency Control</h2>
+<button onclick="emergency('road1')">Road 1</button>
+<button onclick="emergency('road2')">Road 2</button>
+<button onclick="emergency('road3')">Road 3</button>
+<button onclick="emergency('road4')">Road 4</button>
+
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
